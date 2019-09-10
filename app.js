@@ -1,5 +1,7 @@
-function sayHello(name) {
-  console.log("Hello " + name);
-}
+const os = require("os");
 
-sayHello("Jose");
+var totalMemory = os.totalmem();
+var freeMemory = os.freemem();
+
+console.log("Total Memory: " + totalMemory);
+console.log("Free Memory: " + freeMemory);
