@@ -1,17 +1,16 @@
 const EventEmitter = require("events"); //Defining a class
-const emitter = new EventEmitter(); // Instantiating the class
 
-var url = "http://mylogger.io/log";
+class Logger extends EventEmitter {
+  log(message) {
+    console.log(message);
 
-function log(message) {
-  console.log(message);
-  // Raise an event
-  emitter.emit("messageLogged", {
-    Brand: "Bugatti",
-    Model: "Veyron",
-    Year: 2020,
-    url
-  });
+    // Raise an event
+    this.emit("messageLogged", {
+      Brand: "Bugatti",
+      Model: "Veyron",
+      Year: 2020
+    });
+  }
 }
 
-module.exports = log;
+module.exports = Logger;
