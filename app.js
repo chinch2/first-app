@@ -3,10 +3,9 @@ const emitter = new EventEmitter(); // Instantiating the class
 
 // Register a listener
 emitter.on("messageLogged", arg => {
-  console.log("Listener called");
-  console.log(arg.id);
-  console.log(arg.url);
+  console.log("A message have been logged by", arg);
 });
 
-// Raise an event
-emitter.emit("messageLogged", { id: 1, url: "http://" }); //Signaling that an event had happened
+const log = require("./logger");
+
+log("Hi! I am a badass car!");
